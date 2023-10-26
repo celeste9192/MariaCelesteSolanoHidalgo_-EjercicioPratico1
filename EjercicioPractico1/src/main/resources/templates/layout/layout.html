@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Aplicación</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/VistasJS.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/estudiantes}">Estudiantes</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div th:replace="template :: content"></div>
+    </div>
+</body>
+</html>

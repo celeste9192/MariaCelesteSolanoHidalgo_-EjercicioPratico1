@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de Estudiantes</title>
+    </head>
+    <body>
+        <h1>Lista de Estudiantes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Identificación</th>
+                    <th>Nivel Cursado</th>
+                    <th>Edad</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Género</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estudiante : ${estudiantes}">
+                    <td th:text="${estudiante.id}"></td>
+                    <td th:text="${estudiante.nombre}"></td>
+                    <td th:text="${estudiante.identificacion}"></td>
+                    <td th:text="${estudiante.nivel_cursado}"></td>
+                    <td th:text="${estudiante.edad}"></td>
+                    <td th:text="${estudiante.altura}"></td>
+                    <td th:text="${estudiante.peso}"></td>
+                    <td th:text="${estudiante.genero}"></td>
+                    <td>
+                        <!-- Agrega botones para actualizar, borrar y ver detalles de cada estudiante -->
+                        <button th:onclick="'editar(' + ${estudiante.id} + ')'">Editar</button>
+                        <button th:onclick="'eliminar(' + ${estudiante.id} + ')'">Eliminar</button>
+                        <button th:onclick="'ver(' + ${estudiante.id} + ')'">Ver Detalles</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button th:onclick="'agregarNuevo()'">Agregar Nuevo Estudiante</button>
+    </body>
+</html>

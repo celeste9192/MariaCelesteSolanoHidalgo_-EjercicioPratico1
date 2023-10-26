@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragmento</title>
+    <link rel="stylesheet" href="/css/fragmentos.css">
+</head>
+<body>
+    <header>
+        <h1>Estudiantes</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/estudiantes}">Estudiantes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div th:fragment="content">
+        <p>Hola</p>
+    </div>
+
+    <footer>
+        <p>Celeste</p>
+    </footer>
+</body>
+</html>
